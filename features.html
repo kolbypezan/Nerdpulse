@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - NerdPulse Miner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+   <link rel="icon" type="image/x-icon" href="logo.png">
+    <style>
+        /* Embedded styles from style.css */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; 
+            color: #F3F4F6; 
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.95)), url('https://placehold.co/1920x1080/1A1A2E/39FF14?text=Abstract+Network+Lines') no-repeat center center;
+            background-size: cover;
+        }
+        .accent-orange { color: #F7931A; }
+        .accent-cyan { color: #00FFFF; }
+        .accent-green { color: #39FF14; }
+        .btn {
+            @apply inline-block px-8 py-3 text-lg font-semibold rounded-lg transition-transform duration-200 ease-in-out;
+        }
+        .btn-primary {
+            @apply bg-orange-500 text-white hover:bg-orange-600 transform hover:scale-105;
+        }
+        .btn-secondary {
+            @apply bg-gray-700 text-gray-200 hover:bg-gray-600 transform hover:scale-105;
+        }
+        .card {
+            @apply bg-gray-800 p-6 rounded-xl shadow-2xl transition-all duration-300 ease-in-out hover:shadow-cyan-500/30 hover:ring-2 hover:ring-cyan-500;
+        }
+        .section-title { /* This class is used for the "How it Works" cards section title */
+            @apply text-4xl md:text-5xl font-bold mb-4 text-center;
+        }
+        .section-subtitle { /* This class is used for the "How it Works" cards section subtitle */
+            @apply text-xl text-gray-400 mb-12 text-center max-w-3xl mx-auto;
+        }
+        #mobile-menu { display: none; } 
+        .stat-box {
+            @apply bg-gray-700/50 p-4 rounded-lg text-center backdrop-blur-sm;
+        }
+        .footer-link {
+            @apply text-gray-400 hover:text-orange-500 transition-colors;
+        }
+        .teaser-card {
+             @apply bg-gray-800 p-6 rounded-xl shadow-xl hover:shadow-orange-500/30 transition-shadow duration-300 flex flex-col;
+        }
+        .tab-button {
+            @apply px-6 py-3 font-semibold text-gray-400 border-b-2 border-transparent hover:text-orange-500 hover:border-orange-500 transition-all;
+        }
+        .tab-button.active {
+            @apply text-orange-500 border-orange-500;
+        }
+        .tab-content {
+            @apply hidden p-6 bg-gray-800 rounded-b-lg;
+        }
+        .tab-content.active {
+            @apply block;
+        }
+        .thumbnail-img {
+            @apply h-20 w-20 object-contain bg-gray-900 p-1 cursor-pointer rounded-md border-2 border-transparent hover:border-orange-500 transition-all;
+        }
+        .article-card {
+            @apply bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-orange-500/40 transition-shadow duration-300 flex flex-col;
+        }
+        .community-card {
+            @apply bg-gray-800 p-8 rounded-xl shadow-2xl flex flex-col items-center justify-center text-center transition-all duration-300 ease-in-out;
+        }
+        details > summary {
+            list-style: none; 
+        }
+        details > summary::-webkit-details-marker {
+            display: none; 
+        }
+        details summary::after {
+            content: '+';
+            float: right;
+            font-size: 1.5em;
+            line-height: 1;
+            margin-top: -2px; 
+            transition: transform 0.2s ease-in-out;
+        }
+        details[open] summary::after {
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-gray-900/80 backdrop-blur-md sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold">Nerd<span class="accent-orange">Pulse</span> Miner</a>
+            <nav class="hidden md:flex space-x-6 items-center">
+                <a href="features.html" class="text-orange-500 font-semibold border-b-2 border-orange-500">Features</a>
+                <a href="product.html" class="text-gray-300 hover:text-orange-500 transition-colors">Our Miners</a>
+                <a href="learn.html" class="text-gray-300 hover:text-orange-500 transition-colors">Learn</a>
+                <a href="community.html" class="text-gray-300 hover:text-orange-500 transition-colors">Community</a>
+                <a href="faq.html" class="text-gray-300 hover:text-orange-500 transition-colors">FAQ</a>
+                <a href="product.html" class="btn bg-cyan-600 text-white hover:bg-cyan-700 px-6 py-2 text-sm">Shop Now</a>
+            </nav>
+            <div class="md:hidden"><button id="mobile-menu-button" class="text-gray-300 focus:outline-none"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg></button></div>
+        </div>
+        <div id="mobile-menu" class="md:hidden bg-gray-800">
+            <a href="features.html" class="block py-2 px-4 text-sm text-orange-500 bg-gray-700">Features</a>
+            <a href="product.html" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">Our Miners</a>
+            <a href="learn.html" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">Learn</a>
+            <a href="community.html" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">Community</a>
+            <a href="faq.html" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">FAQ</a>
+            <a href="product.html" class="block py-3 px-4 text-sm bg-cyan-600 text-white text-center hover:bg-cyan-700">Shop Now</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="bg-gray-800/50 py-16 md:py-20 text-center">
+            <div class="container mx-auto px-6">
+                <h1 class="text-5xl md:text-6xl font-extrabold mb-6 text-white leading-tight">
+                    Why <span class="accent-orange">NerdPulse</span> Miners?
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
+                    Go beyond speculation. Understand, participate, and support the Bitcoin network with these amazing little devices.
+                </p>
+            </div>
+        </section>
+
+        <section id="features-grid" class="py-16 md:py-20"> 
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card">
+                        <div class="text-5xl accent-cyan mb-4">🧠</div>
+                        <h3 class="text-2xl font-semibold mb-3">Learn Blockchain, Hands-On</h3>
+                        <p class="text-gray-400">Grasp Proof-of-Work, hashes, and blocks by seeing them in action. Perfect for curious minds & future cypherpunks. Understand the mechanics behind Bitcoin in a tangible way.</p>
+                    </div>
+                    <div class="card">
+                        <div class="text-5xl accent-green mb-4">🎲</div>
+                        <h3 class="text-2xl font-semibold mb-3">The Bitcoin Lottery Thrill</h3>
+                        <p class="text-gray-400">Every NerdMiner has a tiny chance to mine a full Bitcoin block! Experience the unique excitement of solo mining. While rare, the possibility adds a layer of fun.</p>
+                    </div>
+                    <div class="card">
+                        <div class="text-5xl accent-orange mb-4">🌐</div>
+                        <h3 class="text-2xl font-semibold mb-3">Support Decentralization</h3>
+                        <p class="text-gray-400">Join the global network. Every active miner, no matter how small, contributes to Bitcoin's resilience and distributed nature. Be part of something bigger.</p>
+                    </div>
+                    <div class="card">
+                        <div class="text-5xl accent-cyan mb-4">🔌</div>
+                        <h3 class="text-2xl font-semibold mb-3">Plug, Connect, Hash!</h3>
+                        <p class="text-gray-400">No complex rigs or command lines for basic setup. Connect to WiFi, add your Bitcoin address via a simple web interface, and you're mining in minutes. Seriously.</p>
+                    </div>
+                    <div class="card">
+                        <div class="text-5xl accent-green mb-4">💡</div>
+                        <h3 class="text-2xl font-semibold mb-3">Tiny Power, Tiny Footprint</h3>
+                        <p class="text-gray-400">Uses less energy than your phone charger (typically 1-1.5W). Mine 24/7 without worrying about a hefty electricity bill or a large environmental impact.</p>
+                    </div>
+                    <div class="card">
+                        <div class="text-5xl accent-orange mb-4">💬</div>
+                        <h3 class="text-2xl font-semibold mb-3">Join the #NerdPulse Crew</h3>
+                        <p class="text-gray-400">Share your setup, stats, and learn with a passionate community of fellow Bitcoin enthusiasts and hobbyist miners. Find support and share your journey.</p>
+                    </div>
+                     <div class="card md:col-span-2 lg:col-span-3"> 
+                        <div class="text-5xl accent-cyan mb-4">🛠️</div>
+                        <h3 class="text-2xl font-semibold mb-3">Open & Customizable</h3>
+                        <p class="text-gray-400">Many NerdMiners run on open-source firmware (like NerdMiner v2 by BitMaker). This means you can tinker, explore the code, and even contribute to development if you're inclined.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works-header" class="bg-gray-800/50 py-16 md:py-20 text-center scroll-mt-20">
+             <div class="container mx-auto px-6">
+                <h2 class="text-5xl md:text-6xl font-extrabold mb-6 text-white leading-tight">
+                    From Box to <span class="accent-orange">Bitcoin Network</span>
+                </h2>
+                <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
+                    Get your NerdMiner up and hashing in three simple steps.
+                </p>
+            </div>
+        </section>
+
+        <section id="how-it-works-content" class="py-16 md:py-20"> 
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="card p-8">
+                        <div class="text-6xl mb-6">📦</div>
+                        <h3 class="text-2xl font-semibold mb-2">1. Unbox & Power Up</h3>
+                        <p class="text-gray-400">Connect your NerdPulse Miner to any USB power source (like a phone charger or computer port using the provided USB-C cable).</p>
+                    </div>
+                    <div class="card p-8">
+                        <div class="text-6xl mb-6">📡</div>
+                        <h3 class="text-2xl font-semibold mb-2">2. Connect & Configure</h3>
+                        <p class="text-gray-400">On first boot, the miner creates a WiFi hotspot. Connect to it with your phone or PC, then navigate to its local IP to enter your home WiFi details and your Bitcoin address.</p>
+                    </div>
+                    <div class="card p-8">
+                        <div class="text-6xl mb-6">⛏️</div>
+                        <h3 class="text-2xl font-semibold mb-2">3. Start Hashing!</h3>
+                        <p class="text-gray-400">Once configured, the miner connects to your WiFi and starts hashing. Watch its screen for real-time stats. You're now part of the Bitcoin lottery!</p>
+                    </div>
+                </div>
+                 <div class="text-center mt-12">
+                    <a href="learn.html#setup-guide" class="btn btn-primary">View Full Setup Guide</a> 
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div><h3 class="text-xl font-bold text-white mb-3">Nerd<span class="accent-orange">Pulse</span> Miner</h3><p class="text-sm">Fueling Bitcoin curiosity.</p></div>
+                <div><h4 class="text-lg font-semibold text-white mb-3">Quick Links</h4><ul class="space-y-2 text-sm"><li><a href="features.html" class="footer-link">Features</a></li><li><a href="product.html" class="footer-link">Our Miners</a></li><li><a href="learn.html" class="footer-link">Learn Center</a></li><li><a href="faq.html" class="footer-link">FAQ & Support</a></li><li><a href="about.html" class="footer-link">About Us</a></li></ul></div>
+                <div><h4 class="text-lg font-semibold text-white mb-3">Legal & Info</h4><ul class="space-y-2 text-sm"><li><a href="privacy.html" class="footer-link">Privacy Policy</a></li><li><a href="terms.html" class="footer-link">Terms of Service</a></li><li><a href="shipping-returns.html" class="footer-link">Shipping & Returns</a></li><li><a href="mining-disclaimer.html" class="footer-link">Mining Disclaimer</a></li></ul></div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-sm"><p>&copy; <span id="currentYear"></span> NerdPulse Miner. All Rights Reserved.</p></div>
+        </div>
+    </footer>
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuButton && mobileMenu) { mobileMenuButton.addEventListener('click', () => { mobileMenu.style.display = mobileMenu.style.display === 'none' || mobileMenu.style.display === '' ? 'block' : 'none'; }); }
+        const currentYearSpan = document.getElementById('currentYear');
+        if (currentYearSpan) { currentYearSpan.textContent = new Date().getFullYear(); }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if there's a hash in the URL when the page loads
+            if (window.location.hash) {
+                const targetId = window.location.hash; // e.g., #how-it-works
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Add a small delay to ensure layout is complete before scrolling
+                    setTimeout(() => {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }, 100); 
+                }
+            }
+        });
+
+        // This part handles clicks on any anchor link that might have a hash
+        // to ensure smooth scrolling for on-page links.
+        document.querySelectorAll('a[href*="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const hrefAttribute = this.getAttribute('href');
+                const targetId = hrefAttribute.substring(hrefAttribute.lastIndexOf('#'));
+                const targetPage = hrefAttribute.substring(0, hrefAttribute.lastIndexOf('#'));
+                const currentPage = window.location.pathname.split('/').pop(); // Gets 'index.html', 'features.html', etc.
+
+                // Check if it's an on-page anchor (targetPage is empty or same as current page)
+                if ( (targetPage === currentPage || targetPage === '') && targetId.length > 1 ) {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault(); // Prevent default only if it's a valid on-page scroll
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                        if (mobileMenu && mobileMenu.style.display === 'block') { mobileMenu.style.display = 'none';}
+                    }
+                }
+                // If it's a link to an anchor on another page (e.g., index.html linking to features.html#how-it-works),
+                // the browser will navigate to features.html, and the DOMContentLoaded listener on features.html
+                // will handle scrolling to the #how-it-works section.
+            });
+        });
+    </script>
+</body>
+</html>
+

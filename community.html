@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community - NerdPulse Miner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+     <link rel="icon" type="image/x-icon" href="logo.png">
+    <style>
+        /* Embedded styles from style.css */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; 
+            color: #F3F4F6; 
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.95)), url('https://placehold.co/1920x1080/1A1A2E/39FF14?text=Abstract+Network+Lines') no-repeat center center;
+            background-size: cover;
+        }
+        .accent-orange { color: #F7931A; }
+        .accent-cyan { color: #00FFFF; }
+        .accent-green { color: #39FF14; }
+        .btn {
+            @apply inline-block px-8 py-3 text-lg font-semibold rounded-lg transition-transform duration-200 ease-in-out;
+        }
+        .btn-primary {
+            @apply bg-orange-500 text-white hover:bg-orange-600 transform hover:scale-105;
+        }
+        .btn-secondary {
+            @apply bg-gray-700 text-gray-200 hover:bg-gray-600 transform hover:scale-105;
+        }
+        .card {
+            @apply bg-gray-800 p-6 rounded-xl shadow-2xl transition-all duration-300 ease-in-out hover:shadow-cyan-500/30 hover:ring-2 hover:ring-cyan-500;
+        }
+        .section-title { /* This class is still used for other section titles if needed */
+            @apply text-4xl md:text-5xl font-bold mb-4 text-center;
+        }
+        .section-subtitle { /* This class is still used for other section subtitles if needed */
+            @apply text-xl text-gray-400 mb-12 text-center max-w-3xl mx-auto;
+        }
+        #mobile-menu { display: none; } 
+        .stat-box {
+            @apply bg-gray-700/50 p-4 rounded-lg text-center backdrop-blur-sm;
+        }
+        .footer-link {
+            @apply text-gray-400 hover:text-orange-500 transition-colors;
+        }
+        .teaser-card {
+             @apply bg-gray-800 p-6 rounded-xl shadow-xl hover:shadow-orange-500/30 transition-shadow duration-300 flex flex-col;
+        }
+        .tab-button {
+            @apply px-6 py-3 font-semibold text-gray-400 border-b-2 border-transparent hover:text-orange-500 hover:border-orange-500 transition-all;
+        }
+        .tab-button.active {
+            @apply text-orange-500 border-orange-500;
+        }
+        .tab-content {
+            @apply hidden p-6 bg-gray-800 rounded-b-lg;
+        }
+        .tab-content.active {
+            @apply block;
+        }
+        .thumbnail-img {
+            @apply cursor-pointer rounded border-2 border-transparent hover:border-orange-500;
+        }
+        .article-card {
+            @apply bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-orange-500/40 transition-shadow duration-300 flex flex-col;
+        }
+        .community-card {
+            @apply bg-gray-800 p-8 rounded-xl shadow-2xl flex flex-col items-center justify-center text-center transition-all duration-300 ease-in-out;
+        }
+        details > summary {
+            list-style: none; 
+        }
+        details > summary::-webkit-details-marker {
+            display: none; 
+        }
+        details summary::after {
+            content: '+';
+            float: right;
+            font-size: 1.5em;
+            line-height: 1;
+            margin-top: -2px; 
+            transition: transform 0.2s ease-in-out;
+        }
+        details[open] summary::after {
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-gray-900/80 backdrop-blur-md sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold">Nerd<span class="accent-orange">Pulse</span> Miner</a>
+            <nav class="hidden md:flex space-x-6 items-center">
+                <a href="features.html" class="text-gray-300 hover:text-orange-500 transition-colors">Features</a>
+                <a href="product.html" class="text-gray-300 hover:text-orange-500 transition-colors">Our Miners</a>
+                <a href="learn.html" class="text-gray-300 hover:text-orange-500 transition-colors">Learn</a>
+                <a href="community.html" class="text-orange-500 font-semibold border-b-2 border-orange-500">Community</a>
+                <a href="faq.html" class="text-gray-300 hover:text-orange-500 transition-colors">FAQ</a>
+                <a href="product.html" class="btn bg-cyan-600 text-white hover:bg-cyan-700 px-6 py-2 text-sm">Shop Now</a>
+            </nav>
+            <div class="md:hidden"><button id="mobile-menu-button" class="text-gray-300 focus:outline-none"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg></button></div>
+        </div>
+        <div id="mobile-menu" class="md:hidden bg-gray-800">
+            <a href="features.html" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">Features</a>
+            <a href="product.html" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">Our Miners</a>
+            <a href="learn.html" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">Learn</a>
+            <a href="community.html" class="block py-2 px-4 text-sm text-orange-500 bg-gray-700">Community</a>
+            <a href="faq.html" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">FAQ</a>
+            <a href="product.html" class="block py-3 px-4 text-sm bg-cyan-600 text-white text-center hover:bg-cyan-700">Shop Now</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="bg-gray-800/50 py-16 md:py-20 text-center">
+            <div class="container mx-auto px-6">
+                <h1 class="text-5xl md:text-6xl font-extrabold mb-6 text-white leading-tight">
+                    Join the <span class="accent-orange">#NerdPulse</span> Crew!
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
+                    Connect with fellow miners, share your awesome setups, ask questions, celebrate the small wins (and dream of the big ones!). We're building a community of learners and enthusiasts.
+                </p>
+            </div>
+        </section>
+
+        <section id="community-content" class="py-16 md:py-20">
+            <div class="container mx-auto px-6 text-center">
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
+                    <a href="https://discord.gg/jFNmHJKmgm" target="_blank" rel="noopener noreferrer" class="community-card hover:shadow-indigo-500/40 hover:ring-2 hover:ring-indigo-500">
+                        <img src="https://placehold.co/120x120/5B21B6/FFFFFF?text=Discord" alt="Discord Icon" class="w-24 h-24 mb-6 rounded-full shadow-lg">
+                        <h3 class="text-3xl font-semibold mb-3 text-indigo-400">Join our Discord Server</h3>
+                        <p class="text-gray-400">The main hub for real-time chat, support, sharing mining stats, and general Bitcoin banter. Click to join!</p>
+                    </a>
+                    <a href="https://x.com/pulsenerd?s=21" target="_blank" rel="noopener noreferrer" class="community-card hover:shadow-sky-500/40 hover:ring-2 hover:ring-sky-500">
+                         <img src="https://placehold.co/120x120/0EA5E9/FFFFFF?text=X" alt="X (Twitter) Icon" class="w-24 h-24 mb-6 rounded-full shadow-lg">
+                        <h3 class="text-3xl font-semibold mb-3 text-sky-400">Follow us on X (Twitter)</h3>
+                        <p class="text-gray-400">Get the latest NerdPulse Miner news, updates, community highlights, and occasional crypto memes.</p>
+                    </a>
+                </div>
+
+                <section id="community-gallery" class="mb-16">
+                    <h2 class="text-3xl font-semibold mb-8 accent-green">Community Setups & Highlights</h2>
+                    <p class="text-gray-400 mb-8">See what our amazing community is doing! Share your setup with #NerdPulseMiner.</p>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="card">
+                            <img src="https://placehold.co/400x300/374151/9CA3AF?text=Cool+Desk+Setup" alt="Community Setup 1" class="rounded-lg mb-4">
+                            <p class="text-sm text-gray-500">@User1's awesome compact mining station!</p>
+                        </div>
+                        <div class="card">
+                            <img src="https://placehold.co/400x300/374151/9CA3AF?text=NerdMiner+in+Action" alt="Community Setup 2" class="rounded-lg mb-4">
+                            <p class="text-sm text-gray-500">Love the custom case by @MinerModder.</p>
+                        </div>
+                        <div class="card">
+                            <img src="https://placehold.co/400x300/374151/9CA3AF?text=Multiple+Miners" alt="Community Setup 3" class="rounded-lg mb-4">
+                            <p class="text-sm text-gray-500">@DecentralFan's growing NerdMiner farm!</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="community-guidelines">
+                    <h2 class="text-3xl font-semibold mb-8 accent-orange">Community Guidelines</h2>
+                    <div class="bg-gray-800 p-8 rounded-xl shadow-xl max-w-2xl mx-auto text-left text-gray-300 space-y-3">
+                        <p>To keep our community welcoming and productive, please follow these simple rules:</p>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li><strong>Be Respectful:</strong> Treat everyone with kindness. No harassment, hate speech, or personal attacks.</li>
+                            <li><strong>Stay On Topic:</strong> Keep discussions related to Bitcoin, mining, NerdMiners, and our community.</li>
+                            <li><strong>No Spam or Excessive Self-Promotion:</strong> Share relevant links, but avoid spamming.</li>
+                            <li><strong>Share Knowledge:</strong> Help others learn! If you know something, share it.</li>
+                            <li><strong>No Financial Advice:</strong> This is a space for learning and hobbyists, not for investment advice.</li>
+                            <li><strong>Keep it Legal:</strong> Don't share or promote illegal activities.</li>
+                        </ul>
+                        <p class="mt-4">Admins and moderators reserve the right to remove content or members who violate these guidelines.</p>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div><h3 class="text-xl font-bold text-white mb-3">Nerd<span class="accent-orange">Pulse</span> Miner</h3><p class="text-sm">Fueling Bitcoin curiosity.</p></div>
+                <div><h4 class="text-lg font-semibold text-white mb-3">Quick Links</h4><ul class="space-y-2 text-sm"><li><a href="features.html" class="footer-link">Features</a></li><li><a href="product.html" class="footer-link">Our Miners</a></li><li><a href="learn.html" class="footer-link">Learn Center</a></li><li><a href="faq.html" class="footer-link">FAQ & Support</a></li><li><a href="about.html" class="footer-link">About Us</a></li></ul></div>
+                <div><h4 class="text-lg font-semibold text-white mb-3">Legal & Info</h4><ul class="space-y-2 text-sm"><li><a href="privacy.html" class="footer-link">Privacy Policy</a></li><li><a href="terms.html" class="footer-link">Terms of Service</a></li><li><a href="shipping-returns.html" class="footer-link">Shipping & Returns</a></li><li><a href="mining-disclaimer.html" class="footer-link">Mining Disclaimer</a></li></ul></div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-sm"><p>&copy; <span id="currentYear"></span> NerdPulse Miner. All Rights Reserved.</p></div>
+        </div>
+    </footer>
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuButton && mobileMenu) { mobileMenuButton.addEventListener('click', () => { mobileMenu.style.display = mobileMenu.style.display === 'none' || mobileMenu.style.display === '' ? 'block' : 'none'; }); }
+        const currentYearSpan = document.getElementById('currentYear');
+        if (currentYearSpan) { currentYearSpan.textContent = new Date().getFullYear(); }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.location.hash) {
+                const targetId = window.location.hash;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    setTimeout(() => {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                }
+            }
+        });
+        document.querySelectorAll('a[href*="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const hrefAttribute = this.getAttribute('href');
+                const targetId = hrefAttribute.substring(hrefAttribute.lastIndexOf('#'));
+                const targetPage = hrefAttribute.substring(0, hrefAttribute.lastIndexOf('#'));
+                const currentPage = window.location.pathname.split('/').pop();
+
+                if ( (targetPage === currentPage || targetPage === '') && targetId.length > 1 && document.querySelector(targetId) ) {
+                    e.preventDefault();
+                    document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
+                    if (mobileMenu && mobileMenu.style.display === 'block') { mobileMenu.style.display = 'none';}
+                }
+            });
+        });
+    </script>
+</body>
+</html>
